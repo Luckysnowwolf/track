@@ -19,9 +19,9 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks))
   ), (tasks))
 
-  function addTask(){
+  function addTasks(){
     let taskName = tasksRef.current.value
-    let id = math.floor(math.random()*10000)
+    let id = Math.floor(Math.random()*10000)
     if (taskName === '') return alert('please add a task')
 
       setTasks(prevTodos => {
@@ -33,15 +33,17 @@ function App() {
   function toggleTask(id){
     const newTasks = [...tasks]
     const task =newTasks.find(task => task.id === id)
-    task.complete = !task.compete
+    task.complete = !task.complete
     setTasks(newTasks)
   }
   function removeTasks(){
-    const newTasks = tasks.filter(task => !task.compete)
-    setTasks(newTasks)
+    const newTasks = tasks.filter(task => !task.complete)
+    setTasks(newTasks) 
+    alert("task removed")
   }
   function removeAllTasks(){
     setTasks([])
+    alert("deleted all remaining tasks")
   }
   function clearStorage(){
     localStorage.clear()
@@ -51,15 +53,15 @@ function App() {
     <div className="container">
       <h1 className='poject-tile'>Task Tracker</h1>
       {
-        tasks.length == 0 ? '': <h1 className='total-tasks'>{tasks.filter(task => !task.compete).length} left to do</h1>
+        tasks.length == 0 ? '': <h1 className='total-tasks'>{tasks.filter(task => !task.complete).length} left to do</h1>
       }
 
     <input className = "input-field" ref ={tasksRef} placeholder = "Add Task..."/>
-    <Button bgColor="green" textColor="white" onClick = {addTask} text="add Task" bottom ='97px' right ='95px'></Button>
-    <Button bgColor="yellow" textColor="white" onClick = {removeTasks} text="remove task" bottom ='79px' right ='95px' padding='10px'></Button>
+    <Button bgColor="green" textColor="white" onClick = {addTasks} text="Add Task" bottom ='97px' right ='95px'></Button>
+    <Button bgColor="orange" textColor="white" onClick = {removeTasks} text="Remove task" bottom ='79px' right ='95px' padding='10px'></Button>
     <Button bgColor="red" textColor="white" onClick = {removeAllTasks} text="Delete all tasks" bottom ='79px' right ='95px'></Button>
-    <Button bgColor="darkred" textColor="white" onClick = {clearStorage} text="clear storage" bottom ='79px' right ='95px'></Button>
-    {tasks.length > 0 ? <TaskList tasks = {tasks} toggleTask={toggleTask} /> : 'no tasks to show' }
+    <Button bgColor="darkred" textColor="white" onClick = {clearStorage} text="Clear storage" bottom ='79px' right ='95px'></Button>
+    {tasks.length > 0 ? <TaskList tasks = {tasks} toggleTask={toggleTask} className="taskText"/> : 'No tasks to show' }
     </div>
   )
 

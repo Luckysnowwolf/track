@@ -1,18 +1,33 @@
 
 .container{
-    width: 15rem;
+    width: 40rem;
+    height: 40rem;
     border-radius: 1rem;
-    box-shadow: 0px 10 px 8px rgb(255, 7, 7);
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem;
-    background-image: url('fox.jpg');
+    box-shadow: 10px 10px 8px rgb(6, 0, 0);
+    margin: 1rem;
+    background-image: url("./assets/images/fox.jpg");
+    background-size: cover;
+    color: black;
+    text-align: center;
 }
 
 .input-field{
-    background-image: url('space.jpg');
+    background-image: url("./assets/images/space.jpg");
+    background-size: cover;
+    border-radius: 10rem;
     font-size: 15px;
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+}
+.task-component{
+    color: rgb(8, 0, 0);
 }
 .total-tasks{
-
+    width: 10rem;
+    border-radius: 1rem;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 10 px 8px rgb(255, 7, 7);
+    margin: 0.5rem;
 }

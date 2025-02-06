@@ -1,5 +1,6 @@
 import React from "react"
 import Task from "./task"
+import '../App.css'
 
 const TaskList = ({tasks, toggleTask, onToggle}) => {
     
