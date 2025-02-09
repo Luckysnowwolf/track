@@ -57,14 +57,13 @@ function App() {
       }
 
     <input className = "input-field" ref ={tasksRef} placeholder = "Add Task..."/>
-    <Button bgColor="green" textColor="white" onClick = {addTasks} text="Add Task" bottom ='97px' right ='95px'></Button>
-    <Button bgColor="orange" textColor="white" onClick = {removeTasks} text="Remove task" bottom ='79px' right ='95px' padding='10px'></Button>
-    <Button bgColor="red" textColor="white" onClick = {removeAllTasks} text="Delete all tasks" bottom ='79px' right ='95px'></Button>
-    <Button bgColor="darkred" textColor="white" onClick = {clearStorage} text="Clear storage" bottom ='79px' right ='95px'></Button>
+    <Button bgColor="green" textColor="white" onClick = {addTasks} text="Add Task" bottom ='97px' right ='95px'display="" margin="10px"></Button>
+    <Button bgColor="orange" textColor="white" onClick = {removeTasks} text="Remove task" bottom ='79px' right ='95px' padding='10px'display="" justifyContent="" justifyItems="" flexDirection="" margin="10px" gridColumnEnd="" gridColumnStart=""></Button>
+    <Button bgColor="red" textColor="white" onClick = {removeAllTasks} text="Delete all tasks" bottom ='79px' right ='95px'display="" margin="10px"></Button>
+    <Button bgColor="darkred" textColor="white" onClick = {clearStorage} text="Clear storage" bottom ='79px' right ='95px'display="" margin="10px"></Button>
     {tasks.length > 0 ? <TaskList tasks = {tasks} toggleTask={toggleTask} className="taskText"/> : 'No tasks to show' }
     </div>
   )
-
 }
 
 export default App
